@@ -2,14 +2,16 @@ package ar.edu.utn.frc.tup.lc.iii.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.Email;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
+@Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserDto {
+
+    private Long id;
 
     @JsonProperty("username")
     private String userName;

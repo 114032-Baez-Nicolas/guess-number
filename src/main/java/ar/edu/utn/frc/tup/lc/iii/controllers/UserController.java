@@ -7,6 +7,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,7 +22,7 @@ public class UserController {
     private ModelMapper modelMapper;
 
     @PostMapping("")
-    public ResponseEntity<UserDto> createDummy(UserDto userDto) {
+    public ResponseEntity<UserDto> createDummy(@RequestBody UserDto userDto) {
         User lUser = userService.createUser(userDto.getUserName(), userDto.getEmail());
         UserDto lUserDtoCreated = modelMapper.map(lUser, UserDto.class);
         return ResponseEntity.ok(lUserDtoCreated);

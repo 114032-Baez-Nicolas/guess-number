@@ -1,8 +1,14 @@
 package ar.edu.utn.frc.tup.lc.iii.entities;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Data
+@Setter
+@Getter
 public class UserEntity {
 
     @Id
@@ -10,4 +16,9 @@ public class UserEntity {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @Column(name = "user_name", nullable = false)
+    private String userName;
+
+    @Column(name = "email", nullable = false)
+    private String email;
 }
