@@ -11,9 +11,7 @@ import lombok.*;
 public class MatchDto {
 
     private Long id;
-
     private MatchDifficulty difficulty;
-
     private Integer remainingTries;
 
 }

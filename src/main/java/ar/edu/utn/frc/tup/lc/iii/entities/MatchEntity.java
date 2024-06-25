@@ -3,6 +3,7 @@ package ar.edu.utn.frc.tup.lc.iii.entities;
 import ar.edu.utn.frc.tup.lc.iii.models.MatchDifficulty;
 import ar.edu.utn.frc.tup.lc.iii.models.MatchStatus;
 import jakarta.persistence.*;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,6 +13,7 @@ import java.time.LocalDateTime;
 @Setter
 @Getter
 @NoArgsConstructor
+@Data
 @Entity
 @Table(name = "matches")
 public class MatchEntity {
@@ -23,7 +25,7 @@ public class MatchEntity {
 
     @JoinColumn(name = "user_id")
     @ManyToOne
-    private UserEntity userId;
+    private UserEntity userEntity;
 
     @Enumerated(EnumType.STRING)
     private MatchDifficulty difficulty;
