@@ -1,6 +1,7 @@
 package ar.edu.utn.frc.tup.lc.iii.controllers;
 
 import ar.edu.utn.frc.tup.lc.iii.dtos.UserDto;
+import ar.edu.utn.frc.tup.lc.iii.models.MatchDifficulty;
 import ar.edu.utn.frc.tup.lc.iii.models.User;
 import ar.edu.utn.frc.tup.lc.iii.services.UserService;
 import org.modelmapper.ModelMapper;
@@ -22,10 +23,16 @@ public class UserController {
     private ModelMapper modelMapper;
 
     @PostMapping("")
-    public ResponseEntity<UserDto> createDummy(@RequestBody UserDto userDto) {
+    public ResponseEntity<UserDto> createUser(@RequestBody UserDto userDto) {
         User lUser = userService.createUser(userDto.getUserName(), userDto.getEmail());
         UserDto lUserDtoCreated = modelMapper.map(lUser, UserDto.class);
         return ResponseEntity.ok(lUserDtoCreated);
+    }
+
+    @PostMapping("/{userId}/matches")
+    public ResponseEntity<UserDto> createUserMatch(@RequestBody MatchDifficulty matchDifficulty) {
+
+        return ResponseEntity.ok(null);
     }
 
 

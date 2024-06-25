@@ -1,14 +1,15 @@
 package ar.edu.utn.frc.tup.lc.iii.entities;
 
 import jakarta.persistence.*;
-import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
-@Data
 @Setter
 @Getter
+@NoArgsConstructor
+@Entity
+@Table(name = "users")
 public class UserEntity {
 
     @Id
